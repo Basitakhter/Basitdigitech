@@ -499,39 +499,37 @@
             <a href="#contact" class="cta-button">Get Started Today</a>
         </div>
     </section>
-    
-   <script>
-        // Load header
-        fetch('header.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to load header');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error loading header:', error);
-                document.getElementById('header-placeholder').innerHTML = '<div style="background:#2b5876;color:white;padding:20px;text-align:center;">Header could not be loaded</div>';
-            });
-        
-        // Load footer
-        fetch('footer.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to load footer');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error loading footer:', error);
-                document.getElementById('footer-placeholder').innerHTML = '<div style="background:#2b5876;color:white;padding:20px;text-align:center;">Footer could not be loaded</div>';
-            });
-    </script>
+    <script>
+    // Load header
+    fetch('header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to load header');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading header:', error);
+            document.getElementById('header-placeholder').innerHTML =
+                '<div style="background:#2b5876;color:white;padding:20px;text-align:center;">Header could not be loaded</div>';
+        });
+
+    // Load footer
+    fetch('footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to load footer');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading footer:', error);
+            document.getElementById('footer-placeholder').innerHTML =
+                '<div style="background:#2b5876;color:white;padding:20px;text-align:center;">Footer could not be loaded</div>';
+        });
+</script>
 </body>
 </html>
+
