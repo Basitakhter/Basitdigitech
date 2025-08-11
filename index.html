@@ -1,0 +1,2558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        /* Header Styles */
+        .header {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .header nav {
+            flex: 1;
+            text-align: center;
+        }
+
+        .header nav ul {
+            list-style: none;
+            display: inline-flex;
+            gap: 20px;
+        }
+
+        .header nav ul li {
+            display: inline;
+        }
+
+        .header nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .header nav ul li a:hover {
+            color: #FFD700;
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .header .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .search-bar input[type="text"] {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 25px;
+            outline: none;
+            margin-right: 10px;
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            min-width: 150px;
+        }
+
+        .header .search-bar input[type="text"]::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .header .search-bar button {
+            padding: 8px 15px;
+            border: none;
+            background-color: #FFD700;
+            color: #333;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .header .search-bar button:hover {
+            background-color: #ffffff;
+            transform: translateY(-2px);
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 10%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            position: relative;
+            min-height: 80vh;
+        }
+        
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .hero::before {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #4e4376 0%, transparent 70%);
+            top: -50px;
+            left: -50px;
+        }
+
+        .hero::after {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #2b5876 0%, transparent 70%);
+            bottom: -100px;
+            right: -50px;
+        }
+
+        .hero-content {
+            max-width: 50%;
+            z-index: 1;
+        }
+
+        .hero-content h4 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 20px;
+            background-color: #FFD700;
+            padding: 12px 24px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2b5876;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+ 
+        .hero-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4e4376;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: inline-block;
+            text-align: center;
+            min-width: 180px;
+        }
+
+        .btn-blue {
+            background-color: #2b5876;
+            color: #ffffff;
+        }
+
+        .btn-blue:hover {
+            background-color: #1a3a4f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(43,88,118,0.3);
+        }
+
+        .btn-red {
+            background-color: #e74c3c;
+            color: #ffffff;
+        }
+
+        .btn-red:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231,76,60,0.3);
+        }
+
+        .hero-image {
+            max-width: 45%;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            margin: 50px auto;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.03);
+        }
+
+        .blob-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .blob-bg {
+            position: absolute;
+            top: -8px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: inline;
+            background: #2b5876;
+            z-index: -1;
+            clip-path: path("M450,300Q400,350,350,400Q300,450,250,400Q200,350,150,300Q100,250,150,200Q200,150,250,100Q300,50,350,100Q400,150,450,200Q500,250,450,300Z");
+            opacity: 0.1;
+        }
+
+        /* Client Logos Section */
+        .clients-section {
+            padding: 80px 10%;
+            background: #ffffff;
+            text-align: center;
+        }
+        
+        .clients-heading {
+            font-size: 2.5rem;
+            color: #2b5876;
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .clients-heading::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 2px;
+        }
+        
+        .client-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .client-logo {
+            max-width: 150px;
+            height: auto;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Services Section */
+        .service-section {
+            padding: 80px 10%;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .service-intro .headline {
+            font-size: 2.5rem;
+            color: #2b5876;
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .service-intro .headline::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 2px;
+        }
+
+        .service-intro .sub-headline {
+            font-size: 1.5rem;
+            color: #4e4376;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .service-intro .description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            line-height: 1.7;
+        }
+
+        .flip-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .flip-card {
+            width: 100%;
+            max-width: 300px;
+            height: 320px;
+            perspective: 1000px;
+        }
+
+        .flip-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-front,
+        .flip-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .flip-front {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid #eee;
+        }
+
+        .flip-front img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .flip-front h3 {
+            font-size: 1.2rem;
+            color: #2b5876;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .flip-back {
+            background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+            color: #fff;
+            transform: rotateY(180deg);
+            text-align: center;
+        }
+
+        .flip-back p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-btn {
+            background-color: #FFD700;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .service-btn:hover {
+            background-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Roadmap Section */
+        .roadmap-section {
+            position: relative;
+            width: 100%;
+            min-height: 600px;
+            background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+            position: relative;
+        }
+
+        /* Left content */
+        .content-area {
+            flex: 1;
+            padding: 60px 7%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: transparent;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .content-area h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .content-area h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 2px;
+        }
+
+        .content-area h2 span {
+            color: #FFD700;
+        }
+
+        .content-area h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #FFD700;
+        }
+
+        .content-area p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 500px;
+            line-height: 1.7;
+        }
+
+        .content-area .icon {
+            width: 80px;
+            height: 80px;
+            margin: 25px 0;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+        }
+
+        /* Right panel */
+        .steps-panel {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            overflow-x: auto;
+            width: 500px;
+            background: rgba(0,0,0,0.1);
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .steps-panel::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        .step {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            padding: 20px 15px;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            font-weight: 600;
+            min-width: 80px;
+            flex-grow: 1;
+            border-left: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .step.active {
+            background: rgba(0,0,0,0.2);
+            color: #fff;
+            border-left: 4px solid #FFD700;
+        }
+
+        .step-number {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .step-title {
+            margin-top: 30px;
+        }
+
+        .arrow {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #FFD700;
+            color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 3;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .arrow:hover {
+            background-color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        /* Background patterns */
+        .roadmap-section::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .roadmap-section::after {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+       
+
+        /* Brand Intro Section */
+        .brand-intro {
+            position: relative;
+            padding: 100px 10%;
+            background-color: #f8f9fa;
+            overflow: hidden;
+        }
+
+        .brand-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-text {
+            flex: 1 1 500px;
+            z-index: 2;
+        }
+
+        .brand-text h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.3;
+            color: #2b5876;
+            margin-bottom: 25px;
+        }
+
+        .brand-text .highlight {
+            color: #FFD700;
+            background: linear-gradient(transparent 60%, rgba(255,215,0,0.3) 40%);
+        }
+
+        .brand-text .underline {
+            text-decoration: underline;
+            text-decoration-color: #FFD700;
+            text-underline-offset: 8px;
+            color: #2b5876;
+        }
+
+        .brand-text p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .btn-brand {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: #FFD700;
+            color: #333;
+            font-weight: 700;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+        }
+
+        .btn-brand:hover {
+            background-color: #2b5876;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(43,88,118,0.3);
+        }
+
+        .brand-graphic {
+            flex: 1 1 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .brand-graphic img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+            transition: transform 0.5s ease;
+        }
+
+        .brand-graphic img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Background Abstract Patterns */
+        .brand-intro::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(43,88,118,0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .brand-intro::after {
+            content: "";
+            position: absolute;
+            bottom: -60px;
+            right: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(78,67,118,0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        /* Industries Section */
+        .industries-section {
+            padding: 80px 10%;
+            background: #ffffff;
+            text-align: center;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .industry-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .industry-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .industry-card h3 {
+            color: #2b5876;
+            margin-bottom: 15px;
+        }
+        
+        .industry-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 10%;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        .testimonials-heading {
+            font-size: 2.5rem;
+            color: #2b5876;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .testimonials-slogan {
+            font-size: 1.3rem;
+            color: #4e4376;
+            margin-bottom: 50px;
+            font-weight: 600;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: "";
+            font-size: 4rem;
+            color: #FFD700;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            opacity: 0.3;
+            line-height: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #FFD700;
+        }
+        
+        .author-info h4 {
+            color: #2b5876;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Service Selector Tool */
+        .selector-section {
+            padding: 80px 10%;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        .selector-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .selector-question {
+            font-size: 1.3rem;
+            color: #2b5876;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .selector-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .selector-option {
+            padding: 15px 25px;
+            background: #f0f2f5;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            color: #4e4376;
+        }
+        
+        .selector-option:hover, .selector-option.active {
+            background: #2b5876;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(43,88,118,0.2);
+        }
+        
+        .selector-result {
+            background: #FFD700;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            display: none;
+        }
+        
+        .selector-result h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .selector-result p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 80px 10%;
+            background: #ffffff;
+            text-align: center;
+        }
+        
+        .blog-carousel {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+            margin-top: 50px;
+        }
+        
+        .blog-carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .blog-carousel::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .blog-carousel::-webkit-scrollbar-thumb {
+            background: #2b5876;
+            border-radius: 10px;
+        }
+        
+        .blog-card {
+            min-width: 300px;
+            scroll-snap-align: start;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 20px;
+            text-align: left;
+        }
+        
+        .blog-date {
+            color: #FFD700;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .blog-title {
+            color: #2b5876;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .blog-link {
+            color: #2b5876;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .blog-link:hover {
+            color: #4e4376;
+        }
+        
+        .blog-link::after {
+            content: "→";
+            margin-left: 5px;
+            transition: all 0.3s;
+        }
+        
+        .blog-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            padding: 80px 10%;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        .guarantee-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .guarantee-badge {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            max-width: 250px;
+        }
+        
+        .guarantee-badge:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .badge-icon {
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+        
+        .badge-title {
+            color: #2b5876;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .badge-text {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 10%;
+            background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+            color: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .contact-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-heading {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .contact-slogan {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .contact-ctas {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-cta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .contact-cta:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(10px);
+        }
+        
+        .contact-cta-icon {
+            font-size: 1.5rem;
+            color: #FFD700;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #2b5876;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(43,88,118,0.1);
+        }
+        
+        .form-submit {
+            background: #FFD700;
+            color: #333;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-size: 1rem;
+        }
+        
+        .form-submit:hover {
+            background: #2b5876;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.3rem;
+            }
+            
+            .content-area h2 {
+                font-size: 2rem;
+            }
+            
+            .content-area h3 {
+                font-size: 1.3rem;
+            }
+            
+            .content-area p {
+                font-size: 1rem;
+            }
+            
+            .brand-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .combined-section {
+                gap: 30px;
+            }
+            
+            .card-container {
+                gap: 20px;
+            }
+            
+            .step-card {
+                width: 260px;
+            }
+            
+            .image-container {
+                flex: 0 0 350px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .hero {
+                flex-direction: column;
+                padding: 60px 5%;
+                text-align: center;
+            }
+
+            .hero-content, .hero-image {
+                max-width: 100%;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                flex-direction: column;
+                min-height: auto;
+            }
+            
+            .content-area {
+                padding: 40px 30px;
+                text-align: center;
+                align-items: center;
+            }
+            
+            .content-area h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .content-area p {
+                max-width: 100%;
+            }
+            
+            .steps-panel {
+                width: 100%;
+                height: 80px;
+                order: -1;
+            }
+            
+            .step {
+                writing-mode: horizontal-tb;
+                transform: none;
+                min-width: 120px;
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+            
+            .step-number {
+                position: static;
+                transform: none;
+                margin-right: 5px;
+                display: inline;
+            }
+            
+            .step-title {
+                margin-top: 0;
+                display: inline;
+            }
+            
+            .arrow {
+                display: none;
+            }
+            
+            .brand-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .brand-text {
+                flex: 1 1 100%;
+            }
+            
+            .brand-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .combined-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 60px 5%;
+            }
+
+            .image-container {
+                order: -1;
+                margin-bottom: 40px;
+                flex: 0 0 auto;
+            }
+            
+            .card-container {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .header nav ul.show {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .header .search-bar {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons .btn {
+                padding: 10px 20px;
+                min-width: 150px;
+                font-size: 0.9rem;
+            }
+            
+            .content-area {
+                padding: 30px 20px;
+            }
+            
+            .content-area h2 {
+                font-size: 1.8rem;
+            }
+            
+            .service-intro .headline {
+                font-size: 2rem;
+            }
+            
+            .service-intro .sub-headline {
+                font-size: 1.3rem;
+            }
+            
+            .flip-card {
+                height: 300px;
+            }
+            
+            .step-card {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .image-container img {
+                max-width: 300px;
+            }
+            
+            .client-logos {
+                gap: 20px;
+            }
+            
+            .client-logo {
+                max-width: 100px;
+            }
+            
+            .selector-container {
+                padding: 30px 20px;
+            }
+            
+            .selector-options {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .contact-form {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 5%;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content h4 {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+            }
+            
+            .content-area h2 {
+                font-size: 1.6rem;
+            }
+            
+            .content-area h3 {
+                font-size: 1.2rem;
+            }
+            
+            .step {
+                min-width: 100px;
+                font-size: 0.8rem;
+            }
+            
+            .service-section {
+                padding: 60px 5%;
+            }
+            
+            .service-intro .headline {
+                font-size: 1.8rem;
+            }
+            
+            .service-intro .sub-headline {
+                font-size: 1.1rem;
+            }
+            
+            .service-intro .description {
+                font-size: 1rem;
+            }
+            
+            .brand-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn-brand {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .combined-section {
+                padding: 50px 5%;
+            }
+            
+            .step-card {
+                padding: 25px 20px;
+            }
+            
+            .step-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .step-card p {
+                font-size: 0.95rem;
+            }
+            
+            .clients-heading,
+            .contact-heading,
+            .testimonials-heading {
+                font-size: 2rem;
+            }
+            
+            .client-logo {
+                max-width: 80px;
+            }
+            
+            .industry-card,
+            .testimonial-card,
+            .blog-card,
+            .guarantee-badge {
+                min-width: 100%;
+            }
+        }
+        .horizontal-container {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 80px 11%;
+            gap: 30px;
+            align-items: center;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        
+        .horizontal-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .content-block {
+            flex: 0 0 280px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            height: 420px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .content-block:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .content-block h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2b5876;
+            line-height: 1.4;
+        }
+        
+        .content-block p {
+            font-size: 1rem;
+            margin-bottom: 25px;
+            color: #555;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .content-block a {
+            font-weight: 600;
+            text-decoration: none;
+            color: #2b5876;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s;
+            font-size: 1rem;
+            margin-top: auto;
+        }
+        
+        .content-block a:hover {
+            color: #4e4376;
+            transform: translateX(5px);
+        }
+        
+        .content-block a::after {
+            content: "→";
+            margin-left: 5px;
+            transition: all 0.3s;
+        }
+        
+        .content-block a:hover::after {
+            margin-left: 10px;
+        }
+        
+        /* Background color variations */
+        .content-block.yellow {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%);
+            border-left: 5px solid #FFD700;
+        }
+        
+        .content-block.blue {
+            background: linear-gradient(135deg, #e6f7ff 0%, #cceeff 100%);
+            border-left: 5px solid #2b5876;
+        }
+        
+        .content-block.pink {
+            background: linear-gradient(135deg, #ffe6f2 0%, #ffcce6 100%);
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .image-block {
+            flex: 0 0 300px;
+            height: 420px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.0);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .image-block img {
+            width: 250px;
+            height: 100%;
+            object-fit: cover;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .horizontal-container {
+                padding: 60px 20px;
+            }
+            
+            .content-block {
+                flex: 0 0 260px;
+                height: 380px;
+                padding: 25px;
+            }
+            
+            .image-block {
+                flex: 0 0 260px;
+                height: 380px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .content-block h3 {
+                font-size: 1.2rem;
+            }
+            
+            .content-block p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Footer Styles */
+    .footer-section {
+        background: linear-gradient(135deg, #1a3a4f 0%, #2b5876 100%);
+        color: #ffffff;
+        padding: 60px 0 0;
+        position: relative;
+    }
+
+    .footer-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: #FFD700;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-column {
+        margin-bottom: 30px;
+    }
+
+    .footer-heading {
+        color: #FFD700;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    .footer-heading::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: rgba(255, 215, 0, 0.5);
+    }
+
+    .footer-about {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #FFD700;
+        border-radius: 50%;
+        transition: all 0.3s;
+    }
+
+    .social-icon:hover {
+        background: #FFD700;
+        color: #2b5876;
+        transform: translateY(-3px);
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s;
+        display: inline-block;
+    }
+
+    .footer-links a:hover {
+        color: #FFD700;
+        transform: translateX(5px);
+    }
+
+    .footer-contact {
+        list-style: none;
+    }
+
+    .footer-contact li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .footer-contact i {
+        color: #FFD700;
+        margin-right: 10px;
+        margin-top: 3px;
+    }
+
+    .footer-contact a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .footer-contact a:hover {
+        color: #FFD700;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .copyright {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+    }
+
+    .footer-legal {
+        display: flex;
+        gap: 20px;
+    }
+
+    .footer-legal a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+    }
+
+    .footer-legal a:hover {
+        color: #FFD700;
+    }
+
+    /* Font Awesome for icons */
+    .fab, .fas {
+        font-size: 1rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .footer-columns {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .footer-bottom {
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .footer-columns {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    </style>
+    <!-- Font Awesome for icons (add this in head) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="header">
+        <a href="#" class="logo">DigitalGrowth</a>
+        <div class="menu-toggle">☰</div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h4>WELCOME TO YOUR DIGITAL GROWTH PARTNER</h4>
+            <h1>We Create, <span class="blue">You Grow</span></h1>
+            <h2><span class="red">Web to All Marketing Solutions — Delivered Seamlessly</span></h2>
+            <p>From custom websites to branding, SEO, and marketing — we build end-to-end solutions that help your business thrive in the digital world.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-blue">Message Us Now</a>
+                <a href="tel:0100200340" class="btn btn-red">010-020-0340</a>
+            </div>
+        </div>
+        
+        <div class="hero-image">
+            <div class="blob-container">
+                <div class="blob-bg"></div>
+                <img src="https://cdn.dribbble.com/users/1787323/screenshots/11310800/media/4cd5b1d5d0d5a5f9b5a5a5a5a5a5a5a5.gif" alt="Digital Marketing Animation">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Client Logos -->
+    <section class="clients-section">
+        <h2 class="clients-heading">Trusted by Brands That Matter</h2>
+        <p>We've helped businesses of all sizes achieve their digital goals</p>
+        
+        <div class="client-logos">
+            <img src="https://via.placeholder.com/150x60?text=Brand+1" alt="Client Logo" class="client-logo">
+            <img src="https://via.placeholder.com/150x60?text=Brand+2" alt="Client Logo" class="client-logo">
+            <img src="https://via.placeholder.com/150x60?text=Brand+3" alt="Client Logo" class="client-logo">
+            <img src="https://via.placeholder.com/150x60?text=Brand+4" alt="Client Logo" class="client-logo">
+            <img src="https://via.placeholder.com/150x60?text=Brand+5" alt="Client Logo" class="client-logo">
+        </div>
+    </section>
+
+    <!-- 3. Services -->
+    <section class="service-section" id="services">
+        <div class="service-intro">
+            <h1 class="headline">Maximize Your Marketing Potential</h1>
+            <h2 class="sub-headline">Your All-in-One Team for Growth</h2>
+            <p class="description">
+                Our expertise covers every aspect of digital marketing, ensuring your business thrives in a competitive landscape. We specialize in SEO, SMM, Web Development, UI/UX, and Google Ads.
+            </p>
+        </div>
+
+        <div class="flip-card-grid">
+            <!-- SEO Card -->
+            <div class="flip-card">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2779/2779775.png" alt="SEO">
+                        <h3>SEO Optimization</h3>
+                    </div>
+                    <div class="flip-back">
+                        <p>Rank higher, get found, and grow your traffic with our proven white-hat SEO strategies tailored to your business goals.</p>
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development Card -->
+            <div class="flip-card">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3242/3242257.png" alt="Web Development">
+                        <h3>Web Design & Development</h3>
+                    </div>
+                    <div class="flip-back">
+                        <p>We build user-focused, mobile-friendly websites tailored to your brand — optimized for speed, design, and conversions.</p>
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Marketing Card -->
+            <div class="flip-card">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Digital Marketing">
+                        <h3>Digital Marketing Solution</h3>
+                    </div>
+                    <div class="flip-back">
+                        <p>We run targeted ads, social campaigns, and content strategies that boost visibility and drive measurable results.</p>
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Marketing Card -->
+            <div class="flip-card">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4052/4052987.png" alt="Content Marketing">
+                        <h3>Content Marketing</h3>
+                    </div>
+                    <div class="flip-back">
+                        <p>Create and distribute valuable content that attracts, engages, and converts your target audience.</p>
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Marketing Card -->
+            <div class="flip-card">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <img src="https://cdn-icons-png.flaticon.com/512/561/561188.png" alt="Email Marketing">
+                        <h3>Email Marketing</h3>
+                    </div>
+                    <div class="flip-back">
+                        <p>Reach your audience directly with personalized email campaigns that drive engagement and sales.</p>
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Card -->
+            <div class="flip-card">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" alt="Analytics">
+                        <h3>Analytics & Reporting</h3>
+                    </div>
+                    <div class="flip-back">
+                        <p>Measure and optimize your marketing efforts with data-driven insights and actionable reports.</p>
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Roadmap -->
+    <section class="roadmap-section" id="process">
+        <div class="container">
+            <!-- Left Content Area -->
+            <div class="content-area" id="content-area">
+                <h2>Guided Roadmap to <span>Digital Success</span></h2>
+                <img id="icon" class="icon" src="https://cdn-icons-png.flaticon.com/512/9151/9151181.png" alt="Step Icon" />
+                <h3 id="title">Discovery & Consultation</h3>
+                <p id="description">
+                    We start by understanding your business, goals, and target audience — setting the foundation for a strategic digital plan.
+                </p>
+            </div>
+
+            <!-- Right Steps Panel -->
+            <div class="steps-panel" id="steps-panel">
+                <!-- Steps will be generated by JS -->
+            </div>
+        </div>
+
+        <!-- Navigation Arrow -->
+        <div class="arrow" id="arrow">→</div>
+    </section>
+
+    <div class="horizontal-container">
+        <div class="content-block yellow">
+            <h3>✅ All-in-One Digital<br />Growth Agency</h3>
+                <p>From <b>AI-powered website design</b> to <b>SEO, branding,</b> & <b>eCommerce development,</b> we provide everything your business needs to grow online under one expert team. No templates. No guesswork. Just tailored solutions built to perform & scale in the digital age.</p>
+                <a href="#">Explore Smart Services</a>
+        </div>
+        
+        <div class="content-block blue">
+           <h3>⚡AI-Driven Strategies.<br />Real Results.</h3>
+                <p>We use <b>data and AI tools </b>to create smarter, faster, and more effective marketing. From <b>SEO</b> to <b>performance campaigns,</b> we focus on what moves the needle — delivering measurable growth and higher ROI for your business.</p>
+                <a href="#">See the Difference</a>
+        </div>
+        
+        <div class="content-block pink">
+            <h3>🤝 Built on Trust & <br />Innovation</h3>
+                <p>We're not just another <b>digital marketing agency</b> — we're your growth partner. Backed by AI insights and a creative team, we help startups and brands scale with confidence, clarity, and innovation. Your goals become our roadmap.</p>
+                <a href="#">Let's Grow Together</a>
+        </div>
+        
+        <div class="image-block">
+            <img src="ai-digital-marketing-agency.png" alt="AI Marketing Illustration">
+        </div>
+    </div>
+
+    <!-- 6. Brand Intro -->
+    <section class="brand-intro">
+        <div class="brand-container">
+            <div class="brand-text">
+                <h1>
+                    <span class="highlight">The Future-Ready</span> Creative Team<br>
+                    <span class="underline">You Can Trust.</span>
+                </h1>
+                <p>
+                    We craft standout digital experiences that blend innovation, strategy, and identity. Our creative team builds future-proof designs that elevate brands and leave lasting impressions.
+                </p>
+                <p>
+                    Partner with us to turn your bold ideas into unforgettable reality. Your vision, our energy — let's create something exceptional.
+                </p>
+                <a href="#contact" class="btn-brand">Get in Touch</a>
+            </div>
+            <div class="brand-graphic">
+                <img src="https://cdn.dribbble.com/users/1787323/screenshots/11310800/media/4cd5b1d5d0d5a5f9b5a5a5a5a5a5a5a5.png" alt="Creative Team Illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Industries -->
+    <section class="industries-section">
+        <h2 class="clients-heading">Tailored Solutions for Every Industry</h2>
+        <p>Whether you're a fashion brand, real estate agency, or tech startup, we craft digital strategies that match your industry's needs</p>
+        
+        <div class="industries-grid">
+            <div class="industry-card">
+                <div class="industry-icon">🛍️</div>
+                <h3>E-commerce</h3>
+                <p>Boost conversions with optimized product pages, shopping experiences, and targeted ads.</p>
+            </div>
+            
+            <div class="industry-card">
+                <div class="industry-icon">🏥</div>
+                <h3>Healthcare</h3>
+                <p>Build trust and attract patients with professional websites and HIPAA-compliant solutions.</p>
+            </div>
+            
+            <div class="industry-card">
+                <div class="industry-icon">🏢</div>
+                <h3>Real Estate</h3>
+                <p>Showcase properties with virtual tours, IDX integration, and lead generation tools.</p>
+            </div>
+            
+            <div class="industry-card">
+                <div class="industry-icon">🎓</div>
+                <h3>Education</h3>
+                <p>Engage students with learning platforms, course websites, and educational marketing.</p>
+            </div>
+            
+            <div class="industry-card">
+                <div class="industry-icon">📱</div>
+                <h3>Tech Startups</h3>
+                <p>Launch your MVP with a powerful digital presence that attracts investors and users.</p>
+            </div>
+            
+            <div class="industry-card">
+                <div class="industry-icon">🧑‍🍳</div>
+                <h3>Food & Hospitality</h3>
+                <p>Drive reservations and orders with mouth-watering visuals and seamless booking systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Testimonials -->
+    <section class="testimonials-section">
+        <h2 class="testimonials-heading">What Our Clients Say</h2>
+        <p class="testimonials-slogan">We Don't Just Build Projects — We Build Relationships</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">Working with this team transformed our online presence. Our website traffic increased by 300% in just 3 months, and the quality of leads improved dramatically.</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>CEO, TechStart Inc.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">The rebranding and website redesign exceeded our expectations. They understood our vision perfectly and delivered a solution that truly represents our company values.</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Michael Chen</h4>
+                        <p>Marketing Director, UrbanLiving</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">Their SEO strategy was a game-changer for our e-commerce store. Organic sales increased by 150% within 6 months, and we're ranking for competitive keywords we never thought possible.</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Emma Rodriguez</h4>
+                        <p>Founder, GreenLeaf Organics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Service Selector -->
+    <section class="selector-section">
+        <div class="selector-container">
+            <h2 class="clients-heading">Find the Right Service for You</h2>
+            <p>Answer a few questions to discover which services match your needs</p>
+            
+            <div class="selector-question" id="question1">Do you need traffic, design, or sales?</div>
+            <div class="selector-options">
+                <div class="selector-option" data-value="traffic">More Traffic</div>
+                <div class="selector-option" data-value="design">Better Design</div>
+                <div class="selector-option" data-value="sales">More Sales</div>
+            </div>
+            
+            <div class="selector-question" id="question2" style="display: none;">Do you already have a website?</div>
+            <div class="selector-options" id="options2" style="display: none;">
+                <div class="selector-option" data-value="yes">Yes</div>
+                <div class="selector-option" data-value="no">No</div>
+            </div>
+            
+            <div class="selector-result" id="result">
+                <h3>We Recommend: <span id="recommendation">SEO Optimization</span></h3>
+                <p id="result-description">Based on your answers, our SEO services would help you attract more qualified traffic to your website.</p>
+                <a href="#contact" class="btn-brand" style="margin-top: 15px;">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Blog -->
+    <section class="blog-section" id="blog">
+        <h2 class="clients-heading">Recent Insights</h2>
+        <p>Stay updated with the latest trends and strategies in digital marketing</p>
+        
+        <div class="blog-carousel">
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="5 Signs You Need a Website Redesign" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-date">June 15, 2023</div>
+                    <h3 class="blog-title">5 Signs You Need a Website Redesign</h3>
+                    <p class="blog-excerpt">Discover the key indicators that your website is due for an upgrade to stay competitive in today's digital landscape.</p>
+                    <a href="#" class="blog-link">Read More</a>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Instagram Ads vs Google Ads" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-date">May 28, 2023</div>
+                    <h3 class="blog-title">Instagram Ads vs Google Ads — Which is Better?</h3>
+                    <p class="blog-excerpt">A comprehensive comparison to help you decide where to allocate your advertising budget for maximum ROI.</p>
+                    <a href="#" class="blog-link">Read More</a>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="SEO Trends 2023" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-date">April 10, 2023</div>
+                    <h3 class="blog-title">Top SEO Trends to Watch in 2023</h3>
+                    <p class="blog-excerpt">Stay ahead of the curve with these emerging SEO strategies that will dominate search rankings this year.</p>
+                    <a href="#" class="blog-link">Read More</a>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Email Marketing" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-date">March 22, 2023</div>
+                    <h3 class="blog-title">Why Email Marketing Still Delivers the Highest ROI</h3>
+                    <p class="blog-excerpt">Learn how to leverage email marketing in 2023 with strategies that convert subscribers into loyal customers.</p>
+                    <a href="#" class="blog-link">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Guarantees -->
+    <section class="guarantee-section">
+        <h2 class="clients-heading">We Stand by Our Work</h2>
+        <p>Our commitments to quality, transparency, and your success</p>
+        
+        <div class="guarantee-badges">
+            <div class="guarantee-badge">
+                <div class="badge-icon">💯</div>
+                <h3 class="badge-title">100% Satisfaction Guarantee</h3>
+                <p class="badge-text">We're not happy until you're thrilled with the results. Your satisfaction is our top priority.</p>
+            </div>
+            
+            <div class="guarantee-badge">
+                <div class="badge-icon">🚀</div>
+                <h3 class="badge-title">On-Time Project Delivery</h3>
+                <p class="badge-text">We respect deadlines and deliver projects on schedule, every time.</p>
+            </div>
+            
+            <div class="guarantee-badge">
+                <div class="badge-icon">🔒</div>
+                <h3 class="badge-title">NDA & Full Privacy</h3>
+                <p class="badge-text">Your ideas and data are safe with us. We sign NDAs and maintain strict confidentiality.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Contact -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-content">
+                <h2 class="contact-heading">Ready to Elevate Your Brand?</h2>
+                <p class="contact-slogan">Let's Turn Your Vision Into Reality</p>
+                
+                <div class="contact-ctas">
+                    <a href="mailto:contact@yourcompany.com" class="contact-cta">
+                        <span class="contact-cta-icon">📩</span>
+                        <span>Contact Us Today</span>
+                    </a>
+                    
+                    <a href="#book-consultation" class="contact-cta">
+                        <span class="contact-cta-icon">📞</span>
+                        <span>Book a Free Consultation</span>
+                    </a>
+                    
+                    <a href="tel:0100200340" class="contact-cta">
+                        <span class="contact-cta-icon">📱</span>
+                        <span>Call: 010-020-0340</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="website">Website (if any)</label>
+                        <input type="url" id="website" name="website">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+
+        // Roadmap steps data
+        const steps = [
+            {
+                number: "01",
+                title: "Discovery & Consultation",
+                content: "We start by understanding your business, goals, and target audience — setting the foundation for a strategic digital plan.",
+                icon: "https://cdn-icons-png.flaticon.com/512/9151/9151181.png"
+            },
+            {
+                number: "02",
+                title: "Brand Strategy & Identity",
+                content: "From logo design to tone of voice, we craft a strong, memorable brand that connects with your audience.",
+                icon: "https://cdn-icons-png.flaticon.com/512/5309/5309779.png"
+            },
+            {
+                number: "03",
+                title: "Website Design & Development",
+                content: "We build fast, responsive, and user-friendly websites that look stunning and perform across all devices.",
+                icon: "https://cdn3d.iconscout.com/3d/premium/thumb/web-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--html-logo-programming-coding-pack-design-icons-6716437.png"
+            },
+            {
+                number: "04",
+                title: "Content Creation",
+                content: "Whether it's web copy, product descriptions, or blog content — we create content that informs, engages, and converts.",
+                icon: "https://cdn-icons-png.flaticon.com/128/10266/10266594.png"
+            },
+            {
+                number: "05",
+                title: "SEO Optimization",
+                content: "We optimize your website to rank higher on search engines, helping you get found by the right people at the right time.",
+                icon: "https://cdn-icons-png.flaticon.com/512/2082/2082236.png"
+            },
+            {
+                number: "06",
+                title: "Digital Marketing Campaigns",
+                content: "We run tailored campaigns across social media, Google, and email to drive traffic, leads, and sales.",
+                icon: "https://cdn-icons-png.flaticon.com/128/7011/7011353.png"
+            },
+            {
+                number: "07",
+                title: "eCommerce Integration & Scaling",
+                content: "We set up or enhance your online store with smooth shopping experiences, payment systems, and conversion tools.",
+                icon: "https://cdn.iconscout.com/icon/free/png-256/free-ecommerce-icon-download-in-svg-png-gif-file-formats--services-solution-cart-online-web-seo-development-vol-1-pack-design-icons-8830.png"
+            },
+            {
+                number: "08",
+                title: "Ongoing Growth & Support",
+                content: "We monitor, maintain, and improve your digital assets to ensure long-term performance and scalability.",
+                icon: "https://cdn-icons-png.flaticon.com/512/5787/5787787.png"
+            }
+        ];
+
+        const stepsPanel = document.getElementById('steps-panel');
+        const title = document.getElementById('title');
+        const description = document.getElementById('description');
+        const icon = document.getElementById('icon');
+        const arrow = document.getElementById('arrow');
+
+        // Render Steps
+        steps.forEach((step, index) => {
+            const div = document.createElement('div');
+            div.classList.add('step');
+            if (index === 0) div.classList.add('active');
+            div.setAttribute('data-index', index);
+            div.innerHTML = `
+                <div class="step-number">${step.number}</div>
+                <div class="step-title">${step.title}</div>
+            `;
+            stepsPanel.appendChild(div);
+        });
+
+        // Handle click on step
+        document.querySelectorAll('.step').forEach(step => {
+            step.addEventListener('click', () => {
+                document.querySelector('.step.active').classList.remove('active');
+                step.classList.add('active');
+
+                const index = parseInt(step.getAttribute('data-index'));
+                title.textContent = steps[index].title;
+                description.textContent = steps[index].content;
+                icon.setAttribute('src', steps[index].icon);
+                
+                // Scroll to center the active step
+                step.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            });
+        });
+
+        // Handle arrow click
+        arrow.addEventListener('click', () => {
+            const current = document.querySelector('.step.active');
+            let currentIndex = parseInt(current.getAttribute('data-index'));
+            let nextIndex = (currentIndex + 1) % steps.length;
+
+            const nextStep = document.querySelector(`.step[data-index="${nextIndex}"]`);
+            current.classList.remove('active');
+            nextStep.classList.add('active');
+
+            title.textContent = steps[nextIndex].title;
+            description.textContent = steps[nextIndex].content;
+            icon.setAttribute('src', steps[nextIndex].icon);
+
+            // Auto-scroll to the next tab
+            nextStep.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        });
+
+        // Service Selector Logic
+        const options = document.querySelectorAll('.selector-option');
+        let selectedOptions = {};
+        
+        options.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove active class from all options in this group
+                this.parentElement.querySelectorAll('.selector-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                
+                // Add active class to clicked option
+                this.classList.add('active');
+                
+                // Store the selected value
+                const questionId = this.parentElement.id || 'question1';
+                selectedOptions[questionId] = this.getAttribute('data-value');
+                
+                // Show next question or result
+                if (questionId === 'question1') {
+                    document.getElementById('question2').style.display = 'block';
+                    document.getElementById('options2').style.display = 'flex';
+                } else {
+                    showRecommendation();
+                }
+            });
+        });
+        
+        function showRecommendation() {
+            const result = document.getElementById('result');
+            const recommendation = document.getElementById('recommendation');
+            const resultDescription = document.getElementById('result-description');
+            
+            // Simple recommendation logic - can be expanded
+            if (selectedOptions['question1'] === 'traffic' && selectedOptions['options2'] === 'yes') {
+                recommendation.textContent = 'SEO Optimization';
+                resultDescription.textContent = 'Based on your answers, our SEO services would help you attract more qualified traffic to your existing website.';
+            } else if (selectedOptions['question1'] === 'traffic' && selectedOptions['options2'] === 'no') {
+                recommendation.textContent = 'Website + SEO Package';
+                resultDescription.textContent = 'You need both a professional website and SEO strategy to attract and convert visitors effectively.';
+            } else if (selectedOptions['question1'] === 'design') {
+                recommendation.textContent = 'Website Redesign';
+                resultDescription.textContent = 'Our design team will create a modern, user-friendly website that reflects your brand and converts visitors.';
+            } else if (selectedOptions['question1'] === 'sales') {
+                recommendation.textContent = 'Conversion Optimization';
+                resultDescription.textContent = 'We\'ll analyze your sales funnel and implement strategies to turn more visitors into paying customers.';
+            }
+            
+            result.style.display = 'block';
+        }
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            this.reset();
+        });
+    </script>
+    <!-- Footer Section -->
+<footer class="footer-section">
+    <div class="footer-container">
+        <!-- Footer Columns -->
+        <div class="footer-columns">
+            <!-- About Column -->
+            <div class="footer-column">
+                <h3 class="footer-heading">DigitalGrowth</h3>
+                <p class="footer-about">We craft digital experiences that drive results. From websites to marketing campaigns, we help businesses thrive online.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Column -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Web Design & Development</a></li>
+                    <li><a href="#">SEO Optimization</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">Branding & Identity</a></li>
+                    <li><a href="#">Content Marketing</a></li>
+                    <li><a href="#">Social Media Management</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Business Ave, City, Country</li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:0100200340">010-020-0340</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:info@digitalgrowth.com">info@digitalgrowth.com</a></li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; 2023 DigitalGrowth. All Rights Reserved.
+            </div>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

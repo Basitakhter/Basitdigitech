@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - DigitalGrowth</title>
+    <style>
+        /* Base Styles (consistent with your theme) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+               
+        /* Our Story Section */
+        .story-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: #2b5876;
+            margin-bottom: 15px;
+        }
+        
+        .section-heading h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 2px;
+        }
+        
+        .section-heading p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #e0e0e0;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            border-left: 4px solid #FFD700;
+        }
+        
+        .timeline-content h3 {
+            color: #2b5876;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content .date {
+            color: #FFD700;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 20px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 20px;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #FFD700;
+            border-radius: 50%;
+            top: 30px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        /* CEO Section */
+        .ceo-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .ceo-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .ceo-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .ceo-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .ceo-badge {
+            background: #FFD700;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .ceo-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .ceo-content h2 {
+            font-size: 2rem;
+            color: #2b5876;
+            margin-bottom: 20px;
+        }
+        
+        .ceo-content h3 {
+            color: #4e4376;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .ceo-content p {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .ceo-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            color: #2b5876;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Values Section */
+        .values-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .value-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s;
+            border-top: 4px solid #FFD700;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: #2b5876;
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            color: #2b5876;
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #FFD700;
+            color: #333;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin: 0 0 0 30px;
+            }
+            
+                    
+            .section-heading h2 {
+                font-size: 1.8rem;
+            }
+            
+            .timeline-item {
+                padding-left: 50px;
+            }
+            
+            .timeline-content {
+                padding: 20px;
+            }
+            
+            .stat-item {
+                min-width: 100%;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+   
+</head>
+<body>
+    <!-- Header will load here -->
+    <div id="header"></div>
+        
+    <!-- Our Story Timeline -->
+    <section class="story-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Our Journey</h2>
+                <p>From humble beginnings to becoming a trusted digital partner for businesses worldwide</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">2011</span>
+                        <h3>The Beginning</h3>
+                        <p>Founded as a small web design studio with just two team members working from a home office.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">2013</span>
+                        <h3>First Major Client</h3>
+                        <p>Landed our first enterprise client, marking our transition to professional digital services.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">2015</span>
+                        <h3>Expanded Services</h3>
+                        <p>Added full-service digital marketing to our offerings, becoming a one-stop digital solution.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">2018</span>
+                        <h3>International Recognition</h3>
+                        <p>Won our first industry award for innovative e-commerce solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">2021</span>
+                        <h3>New Headquarters</h3>
+                        <p>Moved into our modern office space with a growing team of 25 digital experts.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">2023</span>
+                        <h3>Present Day</h3>
+                        <p>Serving 150+ clients worldwide with a team of 40 professionals across 5 service areas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CEO Section -->
+    <section class="ceo-section">
+        <div class="container">
+            <div class="ceo-container">
+                <div class="ceo-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="CEO Photo">
+                    <div class="ceo-badge">12 Years Industry Experience</div>
+                </div>
+                
+                <div class="ceo-content">
+                    <h2>Meet Our Founder</h2>
+                    <h3>Alex Johnson, CEO & Digital Strategist</h3>
+                    <p>With over 12 years of experience in the digital marketing industry, Alex founded DigitalGrowth with a vision to create meaningful digital experiences that drive real business results.</p>
+                    <p>Beginning his career as a freelance web developer in 2011, Alex quickly recognized the need for integrated digital solutions that combine technical excellence with strategic marketing.</p>
+                    <p>Under his leadership, DigitalGrowth has helped transform hundreds of businesses through innovative digital strategies tailored to each client's unique needs and goals.</p>
+                    
+                    <div class="ceo-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">12+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Clients Served</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">40+</div>
+                            <div class="stat-label">Team Members</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide everything we do at DigitalGrowth</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Innovation</h3>
+                    <p>We constantly explore new technologies and strategies to keep our clients ahead of the competition.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Integrity</h3>
+                    <p>Honest communication and ethical practices form the foundation of all our relationships.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Results-Driven</h3>
+                    <p>We measure our success by the tangible growth and success of our clients' businesses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Grow Your Business?</h2>
+            <p>Partner with a team that combines 12 years of experience with cutting-edge digital strategies tailored to your unique needs.</p>
+            <a href="#contact" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+    
+   <script>
+        // Load header.html into #header
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading header:", error));
+    </script>
+</body>
+</html>
